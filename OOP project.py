@@ -69,14 +69,14 @@ while True:
         brand_obj = Brand(len(inventory.stocks) + 1, brand_name)
         product_obj = Product(len(inventory.stocks) + 1, product_name, price, product_type_obj, brand_obj)
         stock_item = Stock(len(inventory.stocks) + 1, quantity, product_obj)
-        inventory.add_stock_item(stock_item)
+        inventory.add_stock(stock_item)
         print("Stock added successfully.")
 
     elif choice == "2":
         stock_id = int(input("Enter the Stock ID you want to remove: "))
         for stock in inventory.stocks:
             if stock.stock_id == stock_id:
-                inventory.remove_stock_item(stock)
+                inventory.remove_stock(stock)
                 print(f"Stock ID {stock_id} removed.")
                 break
             else:
